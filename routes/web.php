@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\Guest\PageController as GuestPageController;
+use App\Http\Controllers\Admin\PageController as AdminPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $navLink = config('db.navLink');
-    $dcComics = config('db.dcComics');
-    return view('welcome' , compact('navLink', 'dcComics') );
-});
+Route::get('/', [GuestPageController::class, 'index']) ->name('guest.welcome');
+// Route::resource('admin/comics', AdminPageController::class);
+route::get('admin/home',[AdminPageController::class,'index']) ->name('admin.home.index');   
