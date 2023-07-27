@@ -1,6 +1,6 @@
 <header>
-
-    <img src="../assets/img/dc-logo.png" alt="">
+ 
+  <img src="../assets/img/dc-logo.png" alt=""> 
 
     <ul>
         @foreach ($navLink as $link)

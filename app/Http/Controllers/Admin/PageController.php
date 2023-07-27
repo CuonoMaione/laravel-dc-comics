@@ -49,6 +49,7 @@ class PageController extends Controller
     public function show($id)
     {
         //
+        return 'ciao id = ' . $id;
     }
 
     /**
