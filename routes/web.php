@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [GuestPageController::class, 'index']) ->name('guest.welcome');
 // Route::resource('admin/comics', AdminPageController::class);
-route::get('admin/home',[AdminPageController::class,'index']) ->name('admin.home.index');   
+route::get('admin/index',[AdminPageController::class,'index']) ->name('admin.home.index');   

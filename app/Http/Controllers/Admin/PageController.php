@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Comic;
 class PageController extends Controller
 {
     /**
@@ -15,7 +15,8 @@ class PageController extends Controller
     public function index()
     {
         //
-        return 'ciao';
+        $Comics = Comic::all();
+        return view('admin/index' , compact('Comics'));
     }
 
     /**
