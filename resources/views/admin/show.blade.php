@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section('title', 'Home')
+
+@section('main-content') 
 
 <div class="card" style="width: 80rem;">
     <img src="{{ $comic->thumb }}" class="card-img-top rounded mx-auto d-block" alt="..."style="width: 20rem;">
@@ -36,3 +41,5 @@
             </li>
         </ul>
     </div>
+
+    @endsection

@@ -15,8 +15,9 @@ class PageController extends Controller
     public function index()
     {
         //
+        $navLink = config('db.navLink');
         $Comics = Comic::all() ;
-        return view('admin/index' , compact('Comics'));
+        return view('admin/index' , compact('Comics' , 'navLink'));
     }
 
     /**
@@ -49,8 +50,9 @@ class PageController extends Controller
     public function show($id)
     {
         //
+        $navLink = config('db.navLink');
         $comic = Comic::findorFail($id);
-        return view('admin.show', compact('comic'));
+        return view('admin.show', compact('comic' , 'navLink'));
     }
 
     /**

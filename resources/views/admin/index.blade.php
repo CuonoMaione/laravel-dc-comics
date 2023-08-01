@@ -1,19 +1,20 @@
 
 
+@extends('layouts.app')
 
+@section('title', 'Home')
 
-
-
+@section('main-content') 
 
     <table class="table table-bordered">
         <thead>
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Titolo</th>
-            <th scope="col">Price</th>
-            <th scope="col">Actions</th>
-            
-          </tr>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Titolo</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+                
+            </tr>
         </thead>
         <tbody>
             @foreach ($Comics as $comic)
@@ -34,4 +35,6 @@
             </tr>
         @endforeach
         </tbody>
-      </table>
+    </table>
+
+    @endsection
