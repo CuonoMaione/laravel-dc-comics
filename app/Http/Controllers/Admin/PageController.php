@@ -15,7 +15,7 @@ class PageController extends Controller
     public function index()
     {
         //
-        $Comics = Comic::all();
+        $Comics = Comic::all() ;
         return view('admin/index' , compact('Comics'));
     }
 
@@ -49,7 +49,8 @@ class PageController extends Controller
     public function show($id)
     {
         //
-        return 'ciao id = ' . $id;
+        $comic = Comic::findorFail($id);
+        return view('admin.show', compact('comic'));
     }
 
     /**

@@ -2,6 +2,9 @@
 
 
 
+
+
+
     <table class="table table-bordered">
         <thead>
           <tr>
@@ -32,5 +35,3 @@
         @endforeach
         </tbody>
       </table>
-
-</html>
