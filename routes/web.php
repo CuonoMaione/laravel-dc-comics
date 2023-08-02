@@ -1,7 +1,8 @@
 <?php
-use App\Http\Controllers\Guest\PageController as GuestPageController;
-use App\Http\Controllers\Admin\PageController as AdminPageController;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PageController as AdminPageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get ('/', [AdminPageController::class, 'index'])->name('home');
+Route::get ('/admin', [AdminPageController::class, 'index'])->name('admin.index');
 
-Route::get('/', [GuestPageController::class, 'index']) ->name('guest.welcome');
-// Route::resource('admin/comics', AdminPageController::class);
-route::get('admin/index',[AdminPageController::class,'index']) ->name('admin.index');   
-route::get('admin/{id}',[AdminPageController::class,'show']) ->name('admin.show');   
+Route::get('/admin/create', [AdminPageController::class, 'create'])->name('admin.create');
+Route::post('/admin/comics', [AdminPageController::class, 'store'])->name('admin.store');
+Route::get('/admin/{id}', [AdminPageController::class, 'show'])->name('admin.show');
+Route::get('/admin/{id}/edit', [AdminPageController::class, 'edit'])->name('admin.edit');
+Route::put('/admin/{id}', [AdminPageController::class, 'update'])->name('admin.update');
+Route::delete('/admin/{id}', [AdminPageController::class, 'destroy'])->name('admin.destroy');

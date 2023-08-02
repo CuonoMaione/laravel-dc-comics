@@ -7,11 +7,11 @@
 </head>
 <body>
     
-    @include('partials.header')
+    
 
     @yield('main-content')
 
-    @include('partials.footer')
+    
 
     @vite('resources/js/app.js')
 </body>
